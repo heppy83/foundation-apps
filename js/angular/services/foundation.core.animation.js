@@ -56,7 +56,11 @@
       element[0].style.transitionDuration = '';
       element.addClass(activeClass);
 
-      element.one(events.join(' '), function() {
+      // element.one(events.join(' '), function() {
+      //   finishAnimation();
+      // });
+      element.one(events.join(' '), function(event) {
+        if(event.delegateTarget == event.target)
         finishAnimation();
       });
 
